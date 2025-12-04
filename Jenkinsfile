@@ -5,8 +5,8 @@ pipeline {
         // username/password credential will expose *_USR and *_PSW vars
         GITHUB_CREDS = credentials('github-packages-cred')
         // tool(...) returns the installation path on the node
-        JAVA_HOME = tool name: 'jdk11'
-        MAVEN_HOME = tool name: 'maven3'
+        JAVA_HOME = tool name: 'jdk-my'
+        MAVEN_HOME = tool name: 'my-mvn'
         // Windows PATH separator is ';' and use backslashes for tool paths
         PATH = "${JAVA_HOME}\\bin;${PATH}"
     }
