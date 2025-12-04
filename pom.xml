@@ -1,14 +1,18 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Project Coordinates -->
     <groupId>com.example</groupId>
     <artifactId>jenkins-demo1a</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-
     <name>Jenkins GitHub Packages Demo</name>
 
+    <!-- GitHub Packages Repository -->
     <distributionManagement>
         <repository>
             <id>github</id>
@@ -16,5 +20,28 @@
             <url>https://maven.pkg.github.com/Akshay8137/jenkins-pipeline-maven-build-and-deploy</url>
         </repository>
     </distributionManagement>
+
+    <!-- Needed to run mvn deploy -->
+    <build>
+        <plugins>
+            <!-- Compiler plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+            </plugin>
+
+            <!-- Deploy plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.1.1</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
